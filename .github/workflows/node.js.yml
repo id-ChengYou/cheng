@@ -31,7 +31,7 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker login --username=${{ secrets.ALIYUN_DOCKER_USERNAME }} registry.cn-shanghai.aliyuncs.com --password=${{ secrets.ALIYUN_DOCKER_PASSWORD }}
+        docker login --username=${{ secrets.DOCKER_USERNAME }} registry.cn-shanghai.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
         docker build -t cheng:latest .
         docker tag cheng registry.cn-shanghai.aliyuncs.com/chengyou/cheng:latest
         docker push registry.cn-hangzhou.aliyuncs.com/chengyou/cheng:latest
